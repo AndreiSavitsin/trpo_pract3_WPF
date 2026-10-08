@@ -7,21 +7,19 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="900">
     <Grid>
-        
-        <DockPanel LastChildFill="True" VerticalAlignment="Top" Background="SlateGray">
-            <TextBox Text="Публикация объявления" Background="SlateGray" Margin="10" Foreground="White" BorderBrush="SlateGray" FontSize="17"/>
-        </DockPanel>
 
-        <Grid Margin="10" Height="300">
+        <Grid Height="450" VerticalAlignment="Top">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="150"/>
                 <ColumnDefinition Width="250"/>
                 <ColumnDefinition Width="150"/>
                 <ColumnDefinition Width="50"/>
                 <ColumnDefinition Width="200"/>
+                <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
         
             <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
                 <RowDefinition Height="30"/>
                 <RowDefinition Height="30"/>
                 <RowDefinition Height="30"/>
@@ -34,46 +32,50 @@
                 <RowDefinition Height="30"/>
             </Grid.RowDefinitions>
 
-            <TextBlock Grid.Row="0" Grid.Column="0" Margin="5" Text="Заголовок"/>
-            <TextBlock Grid.Row="1" Grid.Column="0" Margin="5" Text="Категория"/>
-            <TextBlock Grid.Row="2" Grid.Column="0" Margin="5" Text="Состояние"/>
-            <TextBlock Grid.Row="3" Grid.Column="0" Margin="5" Text="Цена"/>
-            <TextBlock Grid.Row="4" Grid.Column="0" Margin="5" Text="Город"/>
+            <DockPanel Grid.Column="0" Grid.ColumnSpan="6" LastChildFill="True" VerticalAlignment="Top" Background="SlateGray">
+                <TextBox Text="Публикация объявления" Background="SlateGray" Margin="10" Foreground="White" BorderBrush="SlateGray" FontSize="17"/>
+            </DockPanel>
 
-            <TextBox Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="4" Height="25" x:Name="txtHeadline"/>
-            <ComboBox Grid.Row="1" Grid.Column="1" Height="25" Name="comboBoxCategory">
+            <TextBlock Grid.Row="1" Grid.Column="0" Margin="10, 5, 5, 5" Text="Заголовок"/>
+            <TextBlock Grid.Row="2" Grid.Column="0" Margin="10, 5, 5, 5" Text="Категория"/>
+            <TextBlock Grid.Row="3" Grid.Column="0" Margin="10, 5, 5, 5" Text="Состояние"/>
+            <TextBlock Grid.Row="4" Grid.Column="0" Margin="10, 5, 5, 5" Text="Цена"/>
+            <TextBlock Grid.Row="5" Grid.Column="0" Margin="10, 5, 5, 5" Text="Город"/>
+
+            <TextBox Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="4" Height="25" x:Name="txtHeadline"/>
+            <ComboBox Grid.Row="2" Grid.Column="1" Height="25" Name="comboBoxCategory">
                 <ComboBoxItem Content="Электроника"/>
                 <ComboBoxItem Content="Косметика" />
                 <ComboBoxItem Content="Транспорт" />
             </ComboBox>
-            <TextBlock Grid.Row="1" Grid.Column="2" Margin="5" Text="Имя продавца"/>
-            <TextBox x:Name="txtNameSeller" Grid.Row="1" Grid.Column="4" Height="25"/>
+            <TextBlock Grid.Row="2" Grid.Column="2" Margin="5" Text="Имя продавца"/>
+            <TextBox x:Name="txtNameSeller" Grid.Row="2" Grid.Column="4" Height="25"/>
 
-            <ComboBox Grid.Row="2" Grid.Column="1" Height="25">
+            <ComboBox Grid.Row="3" Grid.Column="1" Height="25">
                 <ComboBoxItem Content="Новое"/>
                 <ComboBoxItem Content="Старое"/>
                 <ComboBoxItem Content="Требуется ремонт"/>
                 <ComboBoxItem Content="Не требуется ремонт"/>
             </ComboBox>
-            <TextBlock Text="Телефон" Grid.Row="2" Grid.Column="2" Margin="5"/>
-            <TextBox Grid.Row="2" Grid.Column="4" Height="25"/>
+            <TextBlock Text="Телефон" Grid.Row="3" Grid.Column="2" Margin="5"/>
+            <TextBox Grid.Row="3" Grid.Column="4" Height="25"/>
 
-            <TextBox Grid.Row="3" Grid.Column="1" Height="25"/>
-            <TextBlock Text="Способ связи" Grid.Row="3" Grid.Column="2" Margin="5"/>
-            <ComboBox Grid.Row="3" Grid.Column="4" Height="25">
+            <TextBox Grid.Row="4" Grid.Column="1" Height="25"/>
+            <TextBlock Text="Способ связи" Grid.Row="4" Grid.Column="2" Margin="5"/>
+            <ComboBox Grid.Row="4" Grid.Column="4" Height="25">
                 <ComboBoxItem Content="Звонок"/>
                 <ComboBoxItem Content="Сообщение"/>
             </ComboBox>
 
-            <TextBox Grid.Row="4" Grid.Column="1" Height="25"/>
-            <Border Grid.Row="4" Grid.Column="2" Grid.ColumnSpan="2" Grid.RowSpan="2" Margin="3" BorderBrush="DeepSkyBlue" Width="180" Background="LightBlue" BorderThickness="1">
-                <TextBlock Width="80" Text="Главное фото" Foreground="DeepSkyBlue" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            <TextBox Grid.Row="5" Grid.Column="1" Height="25"/>
+            <Border Grid.Row="5" Grid.Column="2" Grid.ColumnSpan="2" Grid.RowSpan="2" Margin="3" BorderBrush="DeepSkyBlue" Width="180" Background="LightBlue" BorderThickness="1">
+                <TextBlock Width="80" Text="Главное фото" Foreground="DeepSkyBlue" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="49,0,0,0"/>
             </Border>
-            <Button Content="Выбрать фото" Grid.Column="4" Grid.Row="4" Height="25"/>
+            <Button Content="Выбрать фото" Grid.Column="4" Grid.Row="5" Height="25"/>
 
-            <TextBlock Text="Описание" Grid.Column="0" Grid.Row="6"/>
-            <TextBox Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="5" Grid.RowSpan="2"/>
-            <TextBlock Text="Фотографии" Grid.Column="0" Grid.Row="9" FontWeight="Bold" Margin="0, 10, 0, 0"/>
+            <TextBlock Text="Описание" Margin="10, 5, 5, 5" Grid.Column="0" Grid.Row="7"/>
+            <TextBox Margin="10, 5, 5, 5" Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="5" Grid.RowSpan="2"/>
+            <TextBlock Text="Фотографии" Grid.Column="0" Grid.Row="10" FontWeight="Bold" Margin="10, 10, 0, 0"/>
         </Grid>
     </Grid>
 </Window>
